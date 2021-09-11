@@ -1,7 +1,7 @@
 <template>
     <header>
         <nav>
-            <router-link to="/" class="logo">
+            <router-link to="/" class="header-brand">
                 <img src="@/assets/ranek.svg" alt="Ranek" />
             </router-link>
             <router-link class="btn" to="/login">Vender / Login</router-link>
@@ -24,11 +24,11 @@ nav {
     box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
 }
 
-.logo {
+.header-brand {
     padding: 10px 0;
 }
 
-.logo img {
+.header-brand img {
     width: 90px;
 }
 </style>

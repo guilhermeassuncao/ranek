@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h1>👍 Compre ou Venda 👎</h1>
+        <h1 class="home-title">👍 Compre ou Venda 👎</h1>
         <ProdutoBusca />
         <ProdutoLista />
     </section>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style>
-h1 {
+.home-title {
     color: #87f;
     margin-top: 40px;
     font-size: 2rem;
