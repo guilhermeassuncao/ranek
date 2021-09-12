@@ -1,5 +1,6 @@
 <template>
     <section>
+        <h2>Editar Usuário</h2>
         <UsuarioForm>
             <button class="btn btn-user-edit" @click.prevent="atualizarUsuario">Atualizar Usuário</button>
         </UsuarioForm>
@@ -31,6 +32,10 @@ export default {
 </script>
 
 <style>
+h2 {
+    margin-bottom: 30px;
+}
+
 .btn-user-edit {
     width: 100%;
     padding: 15px 30px;

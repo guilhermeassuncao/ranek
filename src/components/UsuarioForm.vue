@@ -1,16 +1,18 @@
 <template>
     <form>
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" v-model="nome" />
+        <div class="user-date-login" v-if="mostrarDadosLogin">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" v-model="nome" />
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" v-model="email" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" v-model="email" />
 
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" v-model="senha" />
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" v-model="senha" />
+        </div>
 
         <label for="cep">Cep</label>
-        <input type="text" name="cep" id="cep" v-model="cep" @keyup="preencherCep"/>
+        <input type="text" name="cep" id="cep" v-model="cep" @keyup="preencherCep" />
 
         <label for="rua">Rua</label>
         <input type="text" name="rua" id="rua" v-model="rua" />
@@ -45,27 +47,29 @@ export default {
             base: "usuario",
             mutation: "UPDATE_USUARIO",
         }),
+        mostrarDadosLogin() {
+            return !this.$store.state.login || this.$route.name === "Usuario-Editar";
+        },
     },
     methods: {
-        preencherCep (){
+        preencherCep() {
             const cep = this.cep.replace(/\D/g, "");
 
-            if(cep.length == 8){
-                getCep(cep).then(response => {
+            if (cep.length == 8) {
+                getCep(cep).then((response) => {
                     this.rua = response.data.logradouro;
                     this.bairro = response.data.bairro;
                     this.estado = response.data.uf;
                     this.cidade = response.data.localidade;
-                })
+                });
             }
-
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style scoped>
-form {
+form, .user-date-login {
     display: grid;
 }
 </style>

@@ -60,7 +60,7 @@ export default {
 
 <style scoped>
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .list-enter,

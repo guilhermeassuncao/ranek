@@ -1,4 +1,50 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "joaocarlos@origamid.com",
+      "vendedor_id": "andre@origamid.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "andre@origamid.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um novo notebook.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "29945560",
+        "rua": "Rua Pinheiros",
+        "numero": "356",
+        "bairro": "Guriri Sul",
+        "cidade": "São Mateus",
+        "estado": "ES"
+      },
+      "id": 1
+    },
+    {
+      "comprador_id": "anita@gmail.com",
+      "vendedor_id": "andre@origamid.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "andre@origamid.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um novo notebook.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "29945550",
+        "rua": "Rua Boa Esperança",
+        "numero": "32",
+        "bairro": "Guriri Sul",
+        "cidade": "São Mateus",
+        "estado": "ES"
+      },
+      "id": 2
+    }
+  ],
   "usuario": [
     {
       "id": "andre@origamid.com",
@@ -24,18 +70,6 @@
       "estado": "RJ"
     },
     {
-      "id": "vW40KVl",
-      "nome": "",
-      "email": "",
-      "senha": "",
-      "cep": "",
-      "rua": "",
-      "numero": "",
-      "bairro": "",
-      "cidade": "",
-      "estado": ""
-    },
-    {
       "id": "marianeves@origamid.com",
       "nome": "Maria das Neves",
       "email": "marianeves@origamid.com",
@@ -55,6 +89,18 @@
       "cep": "29945560",
       "rua": "Rua Pinheiros",
       "numero": "356",
+      "bairro": "Guriri Sul",
+      "cidade": "São Mateus",
+      "estado": "ES"
+    },
+    {
+      "id": "anita@gmail.com",
+      "nome": "Anita ",
+      "email": "anita@gmail.com",
+      "senha": "1234",
+      "cep": "29945550",
+      "rua": "Rua Boa Esperança",
+      "numero": "32",
       "bairro": "Guriri Sul",
       "cidade": "São Mateus",
       "estado": "ES"
