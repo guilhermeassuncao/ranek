@@ -2,7 +2,9 @@
     <div id="app">
         <TheHeader />
         <main>
-            <router-view />
+            <transition mode="out-in">
+                <router-view />
+            </transition>
         </main>
         <TheFooter />
     </div>
@@ -44,6 +46,9 @@ img {
     display: block;
 }
 
+label {
+    margin-bottom: 5px;
+}
 input,
 textarea {
     border-radius: 4px;
