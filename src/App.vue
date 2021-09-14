@@ -12,11 +12,23 @@
 <script>
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import { api } from "@/services.js";
 
 export default {
     components: {
         TheHeader,
         TheFooter,
+    },
+    created() {
+        if (window.localStorage.token) {
+            api.validateToken()
+                .then(() => {
+                    this.$store.dispatch("getUsuario");
+                })
+                .catch(() => {
+                    window.localStorage.removeItem("token");
+                });
+        }
     },
 };
 </script>
@@ -95,6 +107,12 @@ p {
     cursor: pointer;
 }
 
+.btn-disabled, .btn-disabled:hover {
+    background: #bbc;
+    transform: scale(1);
+
+}
+
 .btn:hover {
     background: #65d;
     transform: scale(1.1);
@@ -110,11 +128,12 @@ main {
     flex: 1;
 }
 
-.v-enter, .v-leave-to {
+.v-enter,
+.v-leave-to {
     opacity: 0;
 }
 
-.v-enter { 
+.v-enter {
     transform: translate3d(0, -25px, 0);
 }
 
@@ -122,7 +141,8 @@ main {
     transform: translate3d(0, 25px, 0);
 }
 
-.v-enter-active, .v-leave-active {
-    transition: all .4s;
+.v-enter-active,
+.v-leave-active {
+    transition: all 0.4s;
 }
 </style>

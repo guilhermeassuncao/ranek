@@ -5,7 +5,7 @@
                 <div v-for="(produto, index) in produtos" :key="index" class="product-list-item">
                     <router-link :to="{ name: 'Produto', params: { id: produto.id } }">
                         <img v-if="produto.fotos" :src="produto.fotos[0].src" alt="produto.fotos[0].titulo" class="product-list-item-img" />
-                        <p class="product-list-item-preco">{{ produto.preco | numeroPreco}}</p>
+                        <p class="product-list-item-preco">{{ produto.preco | numeroPreco }}</p>
                         <h2 class="product-list-item-titulo">{{ produto.nome }}</h2>
                         <p>{{ produto.descricao }}</p>
                     </router-link>
@@ -15,7 +15,7 @@
             <div v-else-if="produtos && produtos.length === 0" key="2">
                 <p class="product-list-no-results">Nenhum resultado encontrado. Tente novamente!</p>
             </div>
-            <PaginaCarregando v-else key="3"/>
+            <PaginaCarregando v-else key="3" />
         </transition>
     </section>
 </template>
@@ -77,6 +77,14 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin: 30px;
+}
+
+@media screen and (max-width: 500px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 10px;
+    }
 }
 
 .product-list-item {

@@ -13,10 +13,10 @@
 
                 <transition mode="out-in" v-if="produto.vendido === 'false'">
                     <button class="btn" v-if="!finalizar" @click="finalizar = true">Comprar</button>
-                    <FinalizarCompra v-else :produto="produto"/>
+                    <FinalizarCompra v-else :produto="produto" />
                 </transition>
 
-                <button class="btn" v-else disabled>Produto Vendido</button>
+                <button class="btn btn-disabled" v-else disabled>Produto Vendido</button>
             </div>
         </div>
         <PaginaCarregando v-else />
@@ -35,7 +35,7 @@ export default {
     data() {
         return {
             produto: null,
-            finalizar: false
+            finalizar: false,
         };
     },
     props: ["id"],
@@ -77,8 +77,38 @@ export default {
     font-size: 1.2rem;
 }
 
+.product-imgs {
+    grid-row: 1 / 3;
+}
+
+.product-info {
+    position: sticky;
+    top: 25px;
+}
+
+img {
+    margin: 30px;
+    box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+    max-width: 400px;
+    border-radius: 4px;
+}
+
 .btn {
     margin-top: 60px;
     width: 200px;
+}
+
+@media screen and (max-width: 500px) {
+    .product {
+        grid-template-columns: 1fr;
+    }
+
+    .product-imgs {
+        grid-row: 2;
+    }
+
+    .product-info {
+        position: initial;
+    }
 }
 </style>
