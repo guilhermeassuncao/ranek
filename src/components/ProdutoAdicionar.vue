@@ -7,7 +7,7 @@
         <input type="number" name="preco" id="preco" v-model="produto.preco" />
 
         <label for="fotos">Fotos</label>
-        <input type="file" name="fotos" id="fotos" ref="fotos" multiple/>
+        <input type="file" name="fotos" id="fotos" ref="fotos" multiple />
 
         <label for="descricao">Nome</label>
         <textarea name="descricao" id="descricao" v-model="produto.descricao"></textarea>
@@ -40,7 +40,6 @@ export default {
 
             for (let i = 0; i < files.length; i++) {
                 form.append(files[i].name, files[i]);
-                
             }
 
             form.append("nome", this.produto.nome);
@@ -50,14 +49,20 @@ export default {
             form.append("usuario_id", this.$store.state.usuario.id);
 
             return form;
-
         },
-        adicionarProduto() {
+        async adicionarProduto(event) {
+            const button = event.currentTarget;
+            button.value = "Adicionando...";
+            button.setAttribute("disabled", "");
+
             const produto = this.formatarProduto();
 
-            api.post("/produto", produto).then(() => {
-                this.$store.dispatch("getUsuarioProdutos");
-            });
+            await api.post("/produto", produto);
+            await this.$store.dispatch("getUsuarioProdutos");
+
+            button.value = "Adicionar Produto";
+            button.removeAttribute("disabled");
+
         },
     },
 };

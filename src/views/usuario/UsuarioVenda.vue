@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>
+    <PaginaCarregando v-else />
 </template>
 
 <script>
