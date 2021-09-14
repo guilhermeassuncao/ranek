@@ -14,7 +14,8 @@ export default {
 <style scoped="true">
 h1 {
     margin-bottom: 30px;
-    margin-top: 200px auto;
+    margin-top: 200px;
+    text-align: center
 }
 
 .btn-page-not-found {
