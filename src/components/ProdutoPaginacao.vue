@@ -33,18 +33,18 @@ export default {
         paginas() {
             const current = Number(this.$route.query._page);
             const range = 3;
-            const offset = Math.ceil(range/2);
+
+            const offset = Math.ceil(range / 2);
             const total = this.paginasTotal;
 
             const pagesArray = [];
 
-            for (let index = 1; index < total; index++) {
-                pagesArray.push(index)
-                
+            for (let index = 0; index < total; index++) {
+                pagesArray.push(index + 1);
             }
 
-            pagesArray.splice(0, current - offset)
-            pagesArray.splice(range, total)
+            pagesArray.splice(0, current - offset);
+            pagesArray.splice(range, total);
 
             return pagesArray;
         },
