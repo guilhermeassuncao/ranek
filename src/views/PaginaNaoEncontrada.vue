@@ -13,11 +13,13 @@ export default {
 
 <style scoped="true">
 h1 {
-    margin: 30px auto;
+    margin: 50px auto;
     text-align: center;
 }
 
 .btn-page-not-found {
-    margin: 30px auto;
+    margin: 50px auto;
+    width: 200ox;
+    padding: 25px 30px;
 }
 </style>
