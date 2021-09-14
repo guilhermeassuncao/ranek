@@ -17,7 +17,7 @@ export default {
         ProdutoLista,
     },
     created() {
-        document.title = "Ranek";
+        document.title = "Ranek | Aprendizado sobre Vue.js";
     },
 };
 </script>
