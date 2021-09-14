@@ -41,6 +41,8 @@ export default {
         },
     },
     created() {
+        document.title = "Compras - Usuário - Ranek";
+
         if (this.login) {
             this.getCompras();
         }

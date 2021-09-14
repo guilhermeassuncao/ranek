@@ -51,6 +51,8 @@ export default {
         },
     },
     created() {
+        document.title = "Produtos - Usuário - Ranek";
+
         if (this.login) {
             this.getUsuarioProdutos();
         }

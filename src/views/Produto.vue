@@ -50,6 +50,7 @@ export default {
         },
     },
     created() {
+        document.title = "Produtos - Ranek";
         this.getProduto();
     },
 };

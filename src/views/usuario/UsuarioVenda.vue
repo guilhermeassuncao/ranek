@@ -47,6 +47,8 @@ export default {
         },
     },
     created() {
+        document.title = "Vendas - Usuário - Ranek";
+
         if (this.login) {
             this.getVendas();
         }

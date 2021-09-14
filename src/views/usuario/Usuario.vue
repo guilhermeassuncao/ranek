@@ -43,7 +43,7 @@ export default {
             this.$store.dispatch("deslogarUsuario");
             this.$router.push("/login");
         },
-    },
+    }
 };
 </script>
 
@@ -64,7 +64,8 @@ export default {
     }
 }
 
-.user-sidenav a, .user-sidenav button {
+.user-sidenav a,
+.user-sidenav button {
     padding: 10px;
     display: block;
     background: #f4f7fc;
@@ -72,7 +73,9 @@ export default {
     border-radius: 4px;
 }
 
-.user-sidenav a.router-link-exact-active, .user-sidenav a:hover, .user-sidenav button:hover {
+.user-sidenav a.router-link-exact-active,
+.user-sidenav a:hover,
+.user-sidenav button:hover {
     background: #87f;
     color: white;
 }
