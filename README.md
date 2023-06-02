@@ -20,17 +20,16 @@ Professor - André Rafael
 
 ## :rocket: Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript
-- Vue.js
-- Vue Router
-- Vuex
-
+-   HTML5
+-   CSS3
+-   JavaScript
+-   Vue.js
+-   Vue Router
+-   Vuex
 
 <br>
 
-## :green_book: Licença 
+## :green_book: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 

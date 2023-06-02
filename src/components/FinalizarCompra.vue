@@ -9,23 +9,23 @@
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue";
-import { api } from "@/services.js";
-import { mapState } from "vuex";
+import UsuarioForm from '@/components/UsuarioForm.vue';
+import { api } from '@/services.js';
+import { mapState } from 'vuex';
 
 export default {
-    name: "FinalizarCompra",
+    name: 'FinalizarCompra',
     components: {
         UsuarioForm,
     },
-    props: ["produto"],
+    props: ['produto'],
     data() {
         return {
             erros: [],
         };
     },
     computed: {
-        ...mapState(["usuario"]),
+        ...mapState(['usuario']),
         compra() {
             return {
                 comprador_id: this.usuario.email,
@@ -47,9 +47,9 @@ export default {
             this.erros = [];
 
             try {
-                await this.$store.dispatch("criarUsuario", this.$store.state.usuario);
-                await this.$store.dispatch("logarUsuario", this.$store.state.usuario);
-                await this.$store.dispatch("getUsuario");
+                await this.$store.dispatch('criarUsuario', this.$store.state.usuario);
+                await this.$store.dispatch('logarUsuario', this.$store.state.usuario);
+                await this.$store.dispatch('getUsuario');
 
                 await this.criarTransacao();
             } catch (error) {
@@ -57,8 +57,8 @@ export default {
             }
         },
         criarTransacao() {
-            return api.post("/transacao", this.compra).then(() => {
-                this.$router.push({ name: "Compras" });
+            return api.post('/transacao', this.compra).then(() => {
+                this.$router.push({ name: 'Compras' });
             });
         },
         finalizarCompra() {

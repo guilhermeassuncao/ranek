@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: "PaginaNaoEncontrada",
+    name: 'PaginaNaoEncontrada',
 };
 </script>
 
@@ -15,7 +15,7 @@ export default {
 h1 {
     margin-bottom: 30px;
     margin-top: 200px;
-    text-align: center
+    text-align: center;
 }
 
 .btn-page-not-found {

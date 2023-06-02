@@ -4,16 +4,18 @@
         <ErroNotificacao :erros="erros" />
         <transition mode="out-in">
             <button v-if="!criar" class="btn" @click="criar = true">Criar Conta</button>
-            <UsuarioForm v-else><button class="btn btn-form" @click.prevent="criarUsuario">Criar Usuário</button> </UsuarioForm>
+            <UsuarioForm v-else
+                ><button class="btn btn-form" @click.prevent="criarUsuario">Criar Usuário</button>
+            </UsuarioForm>
         </transition>
     </section>
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue";
+import UsuarioForm from '@/components/UsuarioForm.vue';
 
 export default {
-    name: "LoginCriar",
+    name: 'LoginCriar',
     components: {
         UsuarioForm,
     },
@@ -26,19 +28,19 @@ export default {
     methods: {
         async criarUsuario(event) {
             const button = event.currentTarget;
-            button.value = "Criando...";
-            button.setAttribute("disabled", "");
+            button.value = 'Criando...';
+            button.setAttribute('disabled', '');
 
             button.value = this.erros = [];
             try {
-                await this.$store.dispatch("criarUsuario", this.$store.state.usuario);
-                await this.$store.dispatch("logarUsuario", this.$store.state.usuario);
-                await this.$store.dispatch("getUsuario");
+                await this.$store.dispatch('criarUsuario', this.$store.state.usuario);
+                await this.$store.dispatch('logarUsuario', this.$store.state.usuario);
+                await this.$store.dispatch('getUsuario');
 
-                this.$router.push({ name: "Usuario" });
+                this.$router.push({ name: 'Usuario' });
             } catch (error) {
-                button.value = "Criar Usuário";
-                button.removeAttribute("disabled");
+                button.value = 'Criar Usuário';
+                button.removeAttribute('disabled');
 
                 this.erros.push(error.response.data.message);
             }

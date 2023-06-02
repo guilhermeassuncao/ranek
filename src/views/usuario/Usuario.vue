@@ -3,29 +3,19 @@
         <nav class="user-sidenav">
             <ul>
                 <li>
-                    <router-link :to="{ name: 'Usuario' }">
-                        Produtos
-                    </router-link>
+                    <router-link :to="{ name: 'Usuario' }"> Produtos </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'Compras' }">
-                        Compras
-                    </router-link>
+                    <router-link :to="{ name: 'Compras' }"> Compras </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'Vendas' }">
-                        Vendas
-                    </router-link>
+                    <router-link :to="{ name: 'Vendas' }"> Vendas </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'Usuario-Editar' }">
-                        Editar Usuário
-                    </router-link>
+                    <router-link :to="{ name: 'Usuario-Editar' }"> Editar Usuário </router-link>
                 </li>
                 <li>
-                    <button @click.prevent="deslogar">
-                        Deslogar
-                    </button>
+                    <button @click.prevent="deslogar">Deslogar</button>
                 </li>
             </ul>
         </nav>
@@ -37,13 +27,13 @@
 
 <script>
 export default {
-    name: "Usuario",
+    name: 'Usuario',
     methods: {
         deslogar() {
-            this.$store.dispatch("deslogarUsuario");
-            this.$router.push("/login");
+            this.$store.dispatch('deslogarUsuario');
+            this.$router.push('/login');
         },
-    }
+    },
 };
 </script>
 
@@ -85,7 +75,7 @@ export default {
     width: 100%;
     font-size: 1rem;
     text-align: left;
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     cursor: pointer;
 }
 </style>

@@ -10,25 +10,27 @@
             <ErroNotificacao :erros="erros" />
         </form>
         <p class="login-reset">
-            <a href="http://ranekapilocal.local/wp-login.php?action=lostpassword" target="_blank">Esqueci a senha, Clique Aqui</a>
+            <a href="http://ranekapilocal.local/wp-login.php?action=lostpassword" target="_blank"
+                >Esqueci a senha, Clique Aqui</a
+            >
         </p>
         <LoginCriar />
     </section>
 </template>
 
 <script>
-import LoginCriar from "@/components/LoginCriar.vue";
+import LoginCriar from '@/components/LoginCriar.vue';
 
 export default {
-    name: "Login",
+    name: 'Login',
     components: {
         LoginCriar,
     },
     data() {
         return {
             login: {
-                email: "",
-                senha: "",
+                email: '',
+                senha: '',
             },
             erros: [],
         };
@@ -37,10 +39,10 @@ export default {
         logar() {
             this.erros = [];
             this.$store
-                .dispatch("logarUsuario", this.login)
+                .dispatch('logarUsuario', this.login)
                 .then(() => {
-                    this.$store.dispatch("getUsuario");
-                    this.$router.push({ name: "Usuario" });
+                    this.$store.dispatch('getUsuario');
+                    this.$router.push({ name: 'Usuario' });
                 })
                 .catch((error) => {
                     this.erros.push(error.response.data.message);
@@ -48,7 +50,7 @@ export default {
         },
     },
     created() {
-        document.title = "Login - Ranek";
+        document.title = 'Login - Ranek';
     },
 };
 </script>

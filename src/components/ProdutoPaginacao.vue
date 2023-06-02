@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: "ProdutoPaginacao",
+    name: 'ProdutoPaginacao',
     props: {
         produtosTotal: {
             type: Number,

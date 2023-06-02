@@ -17,18 +17,18 @@
 </template>
 
 <script>
-import { api } from "@/services.js";
+import { api } from '@/services.js';
 
 export default {
-    name: "ProdutoAdicionar",
+    name: 'ProdutoAdicionar',
     data() {
         return {
             produto: {
-                nome: "",
-                preco: "",
-                descricao: "",
+                nome: '',
+                preco: '',
+                descricao: '',
                 fotos: null,
-                vendido: "false",
+                vendido: 'false',
             },
         };
     },
@@ -42,27 +42,26 @@ export default {
                 form.append(files[i].name, files[i]);
             }
 
-            form.append("nome", this.produto.nome);
-            form.append("preco", this.produto.preco);
-            form.append("descricao", this.produto.descricao);
-            form.append("vendido", this.produto.vendido);
-            form.append("usuario_id", this.$store.state.usuario.id);
+            form.append('nome', this.produto.nome);
+            form.append('preco', this.produto.preco);
+            form.append('descricao', this.produto.descricao);
+            form.append('vendido', this.produto.vendido);
+            form.append('usuario_id', this.$store.state.usuario.id);
 
             return form;
         },
         async adicionarProduto(event) {
             const button = event.currentTarget;
-            button.value = "Adicionando...";
-            button.setAttribute("disabled", "");
+            button.value = 'Adicionando...';
+            button.setAttribute('disabled', '');
 
             const produto = this.formatarProduto();
 
-            await api.post("/produto", produto);
-            await this.$store.dispatch("getUsuarioProdutos");
+            await api.post('/produto', produto);
+            await this.$store.dispatch('getUsuarioProdutos');
 
-            button.value = "Adicionar Produto";
-            button.removeAttribute("disabled");
-
+            button.value = 'Adicionar Produto';
+            button.removeAttribute('disabled');
         },
     },
 };

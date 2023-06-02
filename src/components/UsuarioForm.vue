@@ -36,24 +36,24 @@
 </template>
 
 <script>
-import { mapFields } from "@/helpers.js";
-import { getCep } from "@/services.js";
+import { mapFields } from '@/helpers.js';
+import { getCep } from '@/services.js';
 
 export default {
-    name: "UsuarioForm",
+    name: 'UsuarioForm',
     computed: {
         ...mapFields({
-            fields: ["nome", "email", "senha", "cep", "rua", "numero", "bairro", "cidade", "estado"],
-            base: "usuario",
-            mutation: "UPDATE_USUARIO",
+            fields: ['nome', 'email', 'senha', 'cep', 'rua', 'numero', 'bairro', 'cidade', 'estado'],
+            base: 'usuario',
+            mutation: 'UPDATE_USUARIO',
         }),
         mostrarDadosLogin() {
-            return !this.$store.state.login || this.$route.name === "Usuario-Editar";
+            return !this.$store.state.login || this.$route.name === 'Usuario-Editar';
         },
     },
     methods: {
         preencherCep() {
-            const cep = this.cep.replace(/\D/g, "");
+            const cep = this.cep.replace(/\D/g, '');
 
             if (cep.length == 8) {
                 getCep(cep).then((response) => {
@@ -69,7 +69,8 @@ export default {
 </script>
 
 <style scoped>
-form, .user-date-login {
+form,
+.user-date-login {
     display: grid;
 }
 </style>

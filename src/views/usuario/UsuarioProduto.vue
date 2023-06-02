@@ -15,24 +15,24 @@
 </template>
 
 <script>
-import ProdutoAdicionar from "@/components/ProdutoAdicionar.vue";
-import ProdutoItem from "@/components/ProdutoItem.vue";
-import { mapState, mapActions } from "vuex";
-import { api } from "@/services.js";
+import ProdutoAdicionar from '@/components/ProdutoAdicionar.vue';
+import ProdutoItem from '@/components/ProdutoItem.vue';
+import { mapState, mapActions } from 'vuex';
+import { api } from '@/services.js';
 
 export default {
-    name: "UsuarioProduto",
+    name: 'UsuarioProduto',
     components: {
         ProdutoAdicionar,
         ProdutoItem,
     },
     computed: {
-        ...mapState(["login", "usuario", "usuario_produtos"]),
+        ...mapState(['login', 'usuario', 'usuario_produtos']),
     },
     methods: {
-        ...mapActions(["getUsuarioProdutos"]),
+        ...mapActions(['getUsuarioProdutos']),
         deletarProduto(id) {
-            const confirmar = window.confirm("Deseja remover este produto?");
+            const confirmar = window.confirm('Deseja remover este produto?');
 
             if (confirmar) {
                 api.delete(`/produto/${id}`)
@@ -51,7 +51,7 @@ export default {
         },
     },
     created() {
-        document.title = "Produtos - Usuário - Ranek";
+        document.title = 'Produtos - Usuário - Ranek';
 
         if (this.login) {
             this.getUsuarioProdutos();
@@ -80,7 +80,7 @@ h2 {
     position: absolute;
     top: 0;
     right: 0;
-    background: url("../../assets/remove.svg") no-repeat center center;
+    background: url('../../assets/remove.svg') no-repeat center center;
     width: 24px;
     height: 24px;
     text-indent: -140px;

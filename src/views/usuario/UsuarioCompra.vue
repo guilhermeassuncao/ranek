@@ -11,17 +11,17 @@
 </template>
 
 <script>
-import ProdutoItem from "@/components/ProdutoItem.vue";
-import { api } from "@/services.js";
-import { mapState } from "vuex";
+import ProdutoItem from '@/components/ProdutoItem.vue';
+import { api } from '@/services.js';
+import { mapState } from 'vuex';
 
 export default {
-    name: "UsuarioCompra",
+    name: 'UsuarioCompra',
     components: {
         ProdutoItem,
     },
     computed: {
-        ...mapState(["usuario", "login"]),
+        ...mapState(['usuario', 'login']),
     },
     data() {
         return {
@@ -41,7 +41,7 @@ export default {
         },
     },
     created() {
-        document.title = "Compras - Usuário - Ranek";
+        document.title = 'Compras - Usuário - Ranek';
 
         if (this.login) {
             this.getCompras();

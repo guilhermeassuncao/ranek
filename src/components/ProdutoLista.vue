@@ -4,7 +4,12 @@
             <div v-if="produtos && produtos.length" class="product-list" key="1">
                 <div v-for="(produto, index) in produtos" :key="index" class="product-list-item">
                     <router-link :to="{ name: 'Produto', params: { id: produto.id } }">
-                        <img v-if="produto.fotos" :src="produto.fotos[0].src" alt="produto.fotos[0].titulo" class="product-list-item-img" />
+                        <img
+                            v-if="produto.fotos"
+                            :src="produto.fotos[0].src"
+                            alt="produto.fotos[0].titulo"
+                            class="product-list-item-img"
+                        />
                         <p class="product-list-item-preco">{{ produto.preco | numeroPreco }}</p>
                         <h2 class="product-list-item-titulo">{{ produto.nome }}</h2>
                         <p>{{ produto.descricao }}</p>
@@ -21,12 +26,12 @@
 </template>
 
 <script>
-import { api } from "@/services.js";
-import { serialize } from "@/helpers.js";
-import ProdutoPaginacao from "@/components/ProdutoPaginacao.vue";
+import { api } from '@/services.js';
+import { serialize } from '@/helpers.js';
+import ProdutoPaginacao from '@/components/ProdutoPaginacao.vue';
 
 export default {
-    name: "ProdutoLista",
+    name: 'ProdutoLista',
     components: {
         ProdutoPaginacao,
     },
@@ -49,7 +54,7 @@ export default {
             this.produtos = null;
 
             api.get(this.url).then((response) => {
-                this.produtosTotal = Number(response.headers["x-total-count"]);
+                this.produtosTotal = Number(response.headers['x-total-count']);
                 this.produtos = response.data;
             });
         },

@@ -1,18 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: "https://apiranek.guilhermeassuncao.dev/wp-json/api",
+    baseURL: 'https://apiranek.guilhermeassuncao.dev/wp-json/api',
 });
 
 axiosInstance.interceptors.request.use(
-    function(config) {
+    function (config) {
         const token = window.localStorage.token;
         if (token) {
             config.headers.Authorization = token;
         }
         return config;
     },
-    function(error) {
+    function (error) {
         return Promise.reject(error);
     }
 );
@@ -31,10 +31,10 @@ export const api = {
         return axiosInstance.delete(endpoint);
     },
     login(body) {
-        return axios.post("https://apiranek.guilhermeassuncao.dev/wp-json/jwt-auth/v1/token", body);
+        return axios.post('https://apiranek.guilhermeassuncao.dev/wp-json/jwt-auth/v1/token', body);
     },
     validateToken() {
-        return axiosInstance.post("https://apiranek.guilhermeassuncao.dev/wp-json/jwt-auth/v1/token/validate");
+        return axiosInstance.post('https://apiranek.guilhermeassuncao.dev/wp-json/jwt-auth/v1/token/validate');
     },
 };
 

@@ -10,9 +10,9 @@
     </div>
 </template>
 <script>
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@/components/TheFooter.vue";
-import { api } from "@/services.js";
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
+import { api } from '@/services.js';
 
 export default {
     components: {
@@ -23,10 +23,10 @@ export default {
         if (window.localStorage.token) {
             api.validateToken()
                 .then(() => {
-                    this.$store.dispatch("getUsuario");
+                    this.$store.dispatch('getUsuario');
                 })
                 .catch(() => {
-                    window.localStorage.removeItem("token");
+                    window.localStorage.removeItem('token');
                 });
         }
     },
@@ -39,9 +39,9 @@ export default {
 }
 
 body {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     color: #345;
-    background: url("./assets/pattern.svg") repeat top;
+    background: url('./assets/pattern.svg') repeat top;
 }
 
 ul {
@@ -69,7 +69,7 @@ textarea {
     box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
     transition: all 0.3s;
     font-size: 1rem;
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     margin-bottom: 15px;
 }
 
@@ -103,14 +103,14 @@ p {
     box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
     transition: all 0.3s;
     border: none;
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     cursor: pointer;
 }
 
-.btn-disabled, .btn-disabled:hover {
+.btn-disabled,
+.btn-disabled:hover {
     background: #bbc;
     transform: scale(1);
-
 }
 
 .btn:hover {

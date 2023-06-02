@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: "ErroNotificacao",
+    name: 'ErroNotificacao',
     props: {
         erros: Array,
     },

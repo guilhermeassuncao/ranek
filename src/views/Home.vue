@@ -7,17 +7,17 @@
 </template>
 
 <script>
-import ProdutoBusca from "@/components/ProdutoBusca.vue";
-import ProdutoLista from "@/components/ProdutoLista.vue";
+import ProdutoBusca from '@/components/ProdutoBusca.vue';
+import ProdutoLista from '@/components/ProdutoLista.vue';
 
 export default {
-    name: "Home",
+    name: 'Home',
     components: {
         ProdutoBusca,
         ProdutoLista,
     },
     created() {
-        document.title = "Ranek | Aprendizado sobre Vue.js";
+        document.title = 'Ranek | Aprendizado sobre Vue.js';
     },
 };
 </script>

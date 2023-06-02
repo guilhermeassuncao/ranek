@@ -1,19 +1,19 @@
 <template>
-  <div class="product" v-if="produto">
-    <router-link class="product-img" :to="{name: 'Produto', params: {id: produto.id}}">
-      <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo">
-    </router-link>
-    <div class="product-info">
-      <p class="product-price">{{produto.preco | numeroPreco}}</p>
-      <h2 class="product-title">{{produto.nome}}</h2>
-      <slot></slot>
+    <div class="product" v-if="produto">
+        <router-link class="product-img" :to="{ name: 'Produto', params: { id: produto.id } }">
+            <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo" />
+        </router-link>
+        <div class="product-info">
+            <p class="product-price">{{ produto.preco | numeroPreco }}</p>
+            <h2 class="product-title">{{ produto.nome }}</h2>
+            <slot></slot>
+        </div>
     </div>
-  </div>
 </template>
 <script>
 export default {
-    name: "ProdutoItem",
-    props: ["produto"],
+    name: 'ProdutoItem',
+    props: ['produto'],
 };
 </script>
 
@@ -27,7 +27,7 @@ export default {
 }
 
 @media screen and (max-width: 500px) {
-    .product{
+    .product {
         grid-template-columns: 1fr;
         gap: 10px;
     }

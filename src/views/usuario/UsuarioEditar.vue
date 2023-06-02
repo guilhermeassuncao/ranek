@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue";
-import { api } from "@/services.js";
+import UsuarioForm from '@/components/UsuarioForm.vue';
+import { api } from '@/services.js';
 
 export default {
-    name: "UsuarioEditar",
+    name: 'UsuarioEditar',
     components: {
         UsuarioForm,
     },
@@ -27,8 +27,8 @@ export default {
             this.erros = [];
             api.put(`/usuario`, this.$store.state.usuario)
                 .then(() => {
-                    this.$store.dispatch("getUsuario");
-                    this.$router.push({ name: "Usuario" });
+                    this.$store.dispatch('getUsuario');
+                    this.$router.push({ name: 'Usuario' });
                 })
                 .catch((error) => {
                     this.erros.push(error.response.data.message);
@@ -36,7 +36,7 @@ export default {
         },
     },
     created() {
-        document.title = "Editar - Usuário - Ranek";
+        document.title = 'Editar - Usuário - Ranek';
     },
 };
 </script>

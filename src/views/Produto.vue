@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import { api } from "@/services.js";
-import FinalizarCompra from "@/components/FinalizarCompra.vue";
+import { api } from '@/services.js';
+import FinalizarCompra from '@/components/FinalizarCompra.vue';
 
 export default {
-    name: "Produto",
+    name: 'Produto',
     components: {
         FinalizarCompra,
     },
@@ -38,7 +38,7 @@ export default {
             finalizar: false,
         };
     },
-    props: ["id"],
+    props: ['id'],
     methods: {
         getProduto() {
             this.produto = null;
@@ -50,7 +50,7 @@ export default {
         },
     },
     created() {
-        document.title = "Produtos - Ranek";
+        document.title = 'Produtos - Ranek';
         this.getProduto();
     },
 };

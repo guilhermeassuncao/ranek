@@ -1,16 +1,22 @@
 <template>
     <form>
-        <input type="text" name="product-search-input" id="product-search-input" v-model="input" placeholder="Buscar Produtos ..." />
+        <input
+            type="text"
+            name="product-search-input"
+            id="product-search-input"
+            v-model="input"
+            placeholder="Buscar Produtos ..."
+        />
         <input type="submit" id="product-search-btn" value="Buscar" @click.prevent="buscarProdutos" />
     </form>
 </template>
 
 <script>
 export default {
-    name: "ProdutoBusca",
+    name: 'ProdutoBusca',
     data() {
         return {
-            input: "",
+            input: '',
         };
     },
     methods: {
@@ -43,7 +49,7 @@ form {
 #product-search-btn {
     width: 62px;
     height: 62px;
-    background: url("../assets/search.svg") no-repeat center center;
+    background: url('../assets/search.svg') no-repeat center center;
     text-indent: -150px;
     border: none;
     cursor: pointer;
