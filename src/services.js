@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://apiranek.guilhermeassuncao.dev/wp-json/api',
+    baseURL: 'https://api-ranek.guilhermeassuncao.dev//wp-json/api',
 });
 
 axiosInstance.interceptors.request.use(
@@ -31,10 +31,10 @@ export const api = {
         return axiosInstance.delete(endpoint);
     },
     login(body) {
-        return axios.post('https://apiranek.guilhermeassuncao.dev/wp-json/jwt-auth/v1/token', body);
+        return axios.post('https://api-ranek.guilhermeassuncao.dev//wp-json/jwt-auth/v1/token', body);
     },
     validateToken() {
-        return axiosInstance.post('https://apiranek.guilhermeassuncao.dev/wp-json/jwt-auth/v1/token/validate');
+        return axiosInstance.post('https://api-ranek.guilhermeassuncao.dev//wp-json/jwt-auth/v1/token/validate');
     },
 };
 
