@@ -10,7 +10,7 @@
 
 ## :bookmark_tabs: Sobre
 
-Projeto desenvolvido no curso Vue.js
+Projeto desenvolvido no curso Vue.js Completo
 
 Intituição - Origamid
 
